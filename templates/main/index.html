@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Muhammad Danish — Full Stack Python Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+  <script defer src="{% static 'js/script.js' %}"></script>
+</head>
+
+<body>
+
+  <!-- LOADER -->
+  <div id="loader">
+    <div class="ld-letters">
+      <span class="ld-l">M</span>
+      <span class="ld-l">U</span>
+      <span class="ld-l">H</span>
+      <span class="ld-l">A</span>
+      <span class="ld-l">M</span>
+      <span class="ld-l">M</span>
+      <span class="ld-l">A</span>
+      <span class="ld-l">D</span>
+      <span class="ld-l"> </span>
+      <span class="ld-l">D</span>
+      <span class="ld-l">A</span>
+      <span class="ld-l">N</span>
+      <span class="ld-l">I</span>
+      <span class="ld-l">S</span>
+      <span class="ld-l">H</span>
+    </div>
+    <div class="ld-line"></div>
+    <div class="ld-sub">Full Stack Python Developer</div>
+  </div>
+
+  <!-- BG -->
+  <div class="bg-texture"></div>
+  <div class="bg-lines"></div>
+
+  <!-- MOBILE MENU -->
+  <div class="mmenu" id="mmenu">
+    <a href="#hero" onclick="closeMob()">Home</a>
+    <a href="#about" onclick="closeMob()">About</a>
+    <a href="#education" onclick="closeMob()">Education</a>
+    <a href="#tech" onclick="closeMob()">Skills</a>
+    <a href="#projects" onclick="closeMob()">Projects</a>
+    <a href="#services" onclick="closeMob()">Services</a>
+    <a href="#contact" onclick="closeMob()">Contact</a>
+  </div>
+
+  <!-- NAV -->
+  <nav id="nav">
+    <div class="n-logo">M·D</div>
+    <ul class="n-links">
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#tech">Skills</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="#contact" class="n-btn">Hire Me</a>
+    <div class="ham" id="ham" onclick="toggleMob()">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
+
+  <!-- ══ HERO ══ -->
+  <section id="hero" style="padding:120px 80px 80px">
+    <div class="hero-left">
+      <div class="h-eyebrow rev">Available for Work — Lahore, Pakistan</div>
+      <h1 class="h-name rev d1">Muhammad<br /><em>Danish.</em></h1>
+      <div class="h-title-row rev d2">
+        <div class="h-line"></div>
+        <div class="h-title">Full Stack Developer</div>
+        <div class="h-line"></div>
+      </div>
+      <div class="h-typing-wrap rev d2">
+        <div class="h-typing-label">Currently working as</div>
+        <div class="h-typed"><span id="tword"></span><span class="h-cursor">|</span></div>
+      </div>
+      <p class="h-bio rev d3">Motivated Python & Django specialist building responsive, scalable web applications and
+        REST APIs. Clean code. Real results. Passionate about continuous learning and innovative development.</p>
+      <div class="h-btns rev d4">
+        <a href="#projects" class="btn-gold">View Work</a>
+        <a href="#contact" class="btn-outline">Contact Me</a>
+      </div>
+    </div>
+
+    <div class="hero-right rev-r">
+      <div class="photo-frame">
+        <div class="photo-gold-border"></div>
+        <div class="photo-inner">
+          <img src="{% static 'images/picture.jpeg' %}" alt="Muhammad Danish"
+            onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+          <div class="photo-placeholder" style="display:none">👨‍💻</div>
+        </div>
+      </div>
+
+      <div class="info-cards">
+        <div class="info-card">
+          <div class="ic-icon"><i class="fab fa-python"></i></div>
+          <div class="ic-label">Core Stack</div>
+          <div class="ic-val">Python & Django</div>
+        </div>
+        <div class="info-card">
+          <div class="ic-icon"><i class="fas fa-server"></i></div>
+          <div class="ic-label">Specialty</div>
+          <div class="ic-val">REST APIs</div>
+        </div>
+        <div class="info-card">
+          <div class="ic-icon"><i class="fas fa-graduation-cap"></i></div>
+          <div class="ic-label">Education</div>
+          <div class="ic-val">ADP CS · Riphah</div>
+        </div>
+        <div class="info-card">
+          <div class="ic-icon"><i class="fas fa-map-marker-alt"></i></div>
+          <div class="ic-label">Location</div>
+          <div class="ic-val">Lahore 🇵🇰</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="h-scroll">
+      <div class="h-scroll-line"></div>
+      Scroll to explore
+    </div>
+  </section>
+
+  <!-- ══ ABOUT ══ -->
+  <section id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="rev-l">
+          <div class="s-label">About Me</div>
+          <h2 class="s-title">Crafting<br /><em>Digital</em><br />Experiences</h2>
+          <p class="about-p">I'm a motivated and detail-oriented Full Stack Python Developer with hands-on experience
+            building responsive and scalable web applications using Python, Django, HTML, CSS, and JavaScript.</p>
+          <p class="about-p">Skilled in backend systems, REST APIs, and data analysis using Pandas and NumPy. Currently
+            pursuing ADP in Computer Science at Riphah University (2023–2025). Also completed Python & Django Full Stack
+            Development at Youth Training Program, Garden Town (2026).</p>
+          <div class="about-stats">
+            <div class="astat rev d1">
+              <div class="astat-n">3 Months</div>
+              <div class="astat-l">Experience</div>
+            </div>
+            <div class="astat rev d2">
+              <div class="astat-n">8+</div>
+              <div class="astat-l">Projects Built</div>
+            </div>
+            <div class="astat rev d3">
+              <div class="astat-n">3</div>
+              <div class="astat-l">Languages</div>
+            </div>
+            <div class="astat rev d4">
+              <div class="astat-n">∞</div>
+              <div class="astat-l">Lines of Code</div>
+            </div>
+          </div>
+        </div>
+        <div class="rev-r">
+          <div class="s-label" style="margin-top:60px">Skill Level</div>
+
+          <div class="skill-item" onmouseenter="animSkill(this)" data-w="90">
+            <div class="sk-row"><span>Python</span><span class="sk-pct">90%</span></div>
+            <div class="sk-track"><div class="sk-fill" data-w="90"><div class="sk-dot"></div></div></div>
+          </div>
+
+          <div class="skill-item" onmouseenter="animSkill(this)" data-w="85">
+            <div class="sk-row"><span>Django & REST APIs</span><span class="sk-pct">85%</span></div>
+            <div class="sk-track"><div class="sk-fill" data-w="85"><div class="sk-dot"></div></div></div>
+          </div>
+
+          <div class="skill-item" onmouseenter="animSkill(this)" data-w="88">
+            <div class="sk-row"><span>HTML / CSS</span><span class="sk-pct">88%</span></div>
+            <div class="sk-track"><div class="sk-fill" data-w="88"><div class="sk-dot"></div></div></div>
+          </div>
+
+          <div class="skill-item" onmouseenter="animSkill(this)" data-w="75">
+            <div class="sk-row"><span>JavaScript</span><span class="sk-pct">75%</span></div>
+            <div class="sk-track"><div class="sk-fill" data-w="75"><div class="sk-dot"></div></div></div>
+          </div>
+
+          <div class="skill-item" onmouseenter="animSkill(this)" data-w="80">
+            <div class="sk-row"><span>WordPress / Elementor</span><span class="sk-pct">80%</span></div>
+            <div class="sk-track"><div class="sk-fill" data-w="80"><div class="sk-dot"></div></div></div>
+          </div>
+
+          <div class="skill-item" onmouseenter="animSkill(this)" data-w="70">
+            <div class="sk-row"><span>Pandas & NumPy</span><span class="sk-pct">70%</span></div>
+            <div class="sk-track"><div class="sk-fill" data-w="70"><div class="sk-dot"></div></div></div>
+          </div>
+
+          <div class="skill-item" onmouseenter="animSkill(this)" data-w="78">
+            <div class="sk-row"><span>GitHub</span><span class="sk-pct">78%</span></div>
+            <div class="sk-track"><div class="sk-fill" data-w="78"><div class="sk-dot"></div></div></div>
+          </div>
+
+          <div class="skill-item" onmouseenter="animSkill(this)" data-w="72">
+            <div class="sk-row"><span>MySQL</span><span class="sk-pct">72%</span></div>
+            <div class="sk-track"><div class="sk-fill" data-w="72"><div class="sk-dot"></div></div></div>
+          </div>
+
+          <div class="skill-item" onmouseenter="animSkill(this)" data-w="65">
+            <div class="sk-row"><span>PostgreSQL</span><span class="sk-pct">65%</span></div>
+            <div class="sk-track"><div class="sk-fill" data-w="65"><div class="sk-dot"></div></div></div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ TECH ══ -->
+  <section id="tech">
+    <div class="container">
+      <div class="rev" style="text-align:center;margin-bottom:60px">
+        <div class="s-label" style="justify-content:center">Arsenal</div>
+        <h2 class="s-title" style="text-align:center">Tools &amp; <em>Technologies</em></h2>
+      </div>
+      <div class="tech-grid rev">
+        <div class="tc"><span class="tc-icon">🐍</span>
+          <div class="tc-name">Python</div>
+        </div>
+        <div class="tc"><span class="tc-icon">🎸</span>
+          <div class="tc-name">Django</div>
+        </div>
+        <div class="tc"><span class="tc-icon">🌐</span>
+          <div class="tc-name">REST APIs</div>
+        </div>
+        <div class="tc"><span class="tc-icon">🧡</span>
+          <div class="tc-name">HTML</div>
+        </div>
+        <div class="tc"><span class="tc-icon">💙</span>
+          <div class="tc-name">CSS</div>
+        </div>
+        <div class="tc"><span class="tc-icon">💛</span>
+          <div class="tc-name">JavaScript</div>
+        </div>
+        <div class="tc"><span class="tc-icon">📊</span>
+          <div class="tc-name">Pandas</div>
+        </div>
+        <div class="tc"><span class="tc-icon">🧮</span>
+          <div class="tc-name">NumPy</div>
+        </div>
+        <div class="tc"><span class="tc-icon">🔵</span>
+          <div class="tc-name">WordPress</div>
+        </div>
+        <div class="tc"><span class="tc-icon">🧪</span>
+          <div class="tc-name">Postman</div>
+        </div>
+        <div class="tc"><span class="tc-icon">💻</span>
+          <div class="tc-name">VS Code</div>
+        </div>
+        <div class="tc"><span class="tc-icon">📓</span>
+          <div class="tc-name">Jupyter</div>
+        </div>
+        <div class="tc"><span class="tc-icon">🐙</span>
+          <div class="tc-name">GitHub</div>
+        </div>
+        <div class="tc"><span class="tc-icon">🐬</span>
+          <div class="tc-name">MySQL</div>
+        </div>
+        <div class="tc"><span class="tc-icon">🐘</span>
+          <div class="tc-name">PostgreSQL</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ EDUCATION ══ -->
+  <section id="education">
+    <div class="container">
+      <div class="rev">
+        <div class="s-label">Education</div>
+        <h2 class="s-title">Academic <em>Journey</em></h2>
+      </div>
+      <div
+        style="display:flex;flex-direction:column;gap:1px;background:var(--border);border:1px solid var(--border);margin-top:0"
+        class="rev">
+
+
+        <!-- Course Item (1st) -->
+        <div
+          style="background:var(--bg2);padding:36px 40px;display:grid;grid-template-columns:180px 1fr;gap:40px;align-items:start;transition:background 0.3s"
+          onmouseenter="this.style.background='rgba(201,169,110,0.04)'"
+          onmouseleave="this.style.background='var(--bg2)'">
+          <div>
+            <div
+              style="font-size:0.6rem;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:6px">
+              2026</div>
+            <div style="font-size:0.75rem;color:var(--dim);letter-spacing:1px">Youth Training Program</div>
+          </div>
+          <div>
+            <div style="font-family:var(--fh);font-size:1.5rem;font-weight:400;letter-spacing:1px;margin-bottom:6px">
+              Python & Django <em style="font-style:italic;color:var(--gold)">Full Stack</em></div>
+            <div style="font-size:0.78rem;color:var(--silver);margin-bottom:12px">Garden Town, Lahore</div>
+            <div
+              style="display:inline-block;font-size:0.58rem;letter-spacing:2px;text-transform:uppercase;padding:4px 14px;border:1px solid var(--border);color:var(--silver)">
+              Certified</div>
+          </div>
+        </div>
+
+        <!-- Education Item 1: ADP (2nd) -->
+        <div
+          style="background:var(--bg2);padding:36px 40px;display:grid;grid-template-columns:180px 1fr;gap:40px;align-items:start;transition:background 0.3s"
+          onmouseenter="this.style.background='rgba(201,169,110,0.04)'"
+          onmouseleave="this.style.background='var(--bg2)'">
+          <div>
+            <div
+              style="font-size:0.6rem;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:6px">
+              2023 — 2025</div>
+            <div style="font-size:0.75rem;color:var(--dim);letter-spacing:1px">Riphah University</div>
+          </div>
+          <div>
+            <div style="font-family:var(--fh);font-size:1.5rem;font-weight:400;letter-spacing:1px;margin-bottom:6px">
+              Associate Degree Program <em style="font-style:italic;color:var(--gold)">(ADP)</em></div>
+            <div style="font-size:0.78rem;color:var(--silver);margin-bottom:12px">Computer Science</div>
+            <div
+              style="display:inline-block;font-size:0.58rem;letter-spacing:2px;text-transform:uppercase;padding:4px 14px;border:1px solid var(--border);color:var(--silver)">
+              Completed</div>
+          </div>
+        </div>
+
+        <!-- Education Item 2: ICS (3rd) -->
+        <div
+          style="background:var(--bg2);padding:36px 40px;display:grid;grid-template-columns:180px 1fr;gap:40px;align-items:start;transition:background 0.3s"
+          onmouseenter="this.style.background='rgba(201,169,110,0.04)'"
+          onmouseleave="this.style.background='var(--bg2)'">
+          <div>
+            <div
+              style="font-size:0.6rem;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:6px">
+              2021 — 2023</div>
+            <div style="font-size:0.75rem;color:var(--dim);letter-spacing:1px">Board of Intermediate</div>
+          </div>
+          <div>
+            <div style="font-family:var(--fh);font-size:1.5rem;font-weight:400;letter-spacing:1px;margin-bottom:6px">
+              Intermediate <em style="font-style:italic;color:var(--gold)">(ICS)</em></div>
+            <div style="font-size:0.78rem;color:var(--silver);margin-bottom:12px">Computer Science</div>
+            <div
+              style="display:inline-block;font-size:0.58rem;letter-spacing:2px;text-transform:uppercase;padding:4px 14px;border:1px solid var(--border);color:var(--silver)">
+              Completed</div>
+          </div>
+        </div>
+
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ PROJECTS ══ -->
+  <section id="projects">
+    <div class="container">
+      <div class="rev">
+        <div class="s-label">Work</div>
+        <h2 class="s-title">Selected <em>Projects</em></h2>
+        <p class="s-sub">Real-world applications built with Python, Django, and modern frontend technologies.</p>
+      </div>
+      <div class="proj-grid">
+        <div class="proj-card rev d1">
+          <div class="proj-num">01</div>
+          <span class="proj-tag">Django · Full Stack</span>
+          <h3 class="proj-title">E-Commerce Website</h3>
+          <p class="proj-desc">Full-stack e-commerce platform with product system, shopping cart, checkout flow, and
+            fully responsive design built with Python & Django.</p>
+          <div class="proj-techs"><span class="tbadge">Python</span><span class="tbadge">Django</span><span
+              class="tbadge">HTML/CSS</span><span class="tbadge">JavaScript</span></div>
+          <div class="proj-links"><a href="#" class="plink"><i class="fab fa-github"></i>&nbsp;GitHub</a><a href="#"
+              class="plink"><i class="fas fa-external-link-alt"></i>&nbsp;Live</a></div>
+        </div>
+        <div class="proj-card rev d2">
+          <div class="proj-num">02</div>
+          <span class="proj-tag">Django REST · API</span>
+          <h3 class="proj-title">Blog API</h3>
+          <p class="proj-desc">RESTful Blog API with full CRUD operations, login/signup authentication, and
+            comprehensive Postman-tested endpoints using Django REST Framework.</p>
+          <div class="proj-techs"><span class="tbadge">Django REST</span><span class="tbadge">CRUD</span><span
+              class="tbadge">Auth</span><span class="tbadge">Postman</span></div>
+          <div class="proj-links"><a href="#" class="plink"><i class="fab fa-github"></i>&nbsp;GitHub</a><a href="#"
+              class="plink"><i class="fas fa-external-link-alt"></i>&nbsp;Live</a></div>
+        </div>
+        <div class="proj-card rev d3">
+          <div class="proj-num">03</div>
+          <span class="proj-tag">WordPress · Frontend</span>
+          <h3 class="proj-title">WordPress Sites</h3>
+          <p class="proj-desc">Multiple responsive websites with Elementor, optimized performance, managed
+            plugins/themes, and resolved compatibility issues for clients in Lahore.</p>
+          <div class="proj-techs"><span class="tbadge">WordPress</span><span class="tbadge">Elementor</span><span
+              class="tbadge">CSS</span><span class="tbadge">Performance</span></div>
+          <div class="proj-links"><a href="#" class="plink"><i class="fab fa-github"></i>&nbsp;GitHub</a><a href="#"
+              class="plink"><i class="fas fa-external-link-alt"></i>&nbsp;Live</a></div>
+        </div>
+        <div class="proj-card rev d1">
+          <div class="proj-num">04</div>
+          <span class="proj-tag">Django · Full Stack</span>
+          <h3 class="proj-title">Restaurant Website</h3>
+          <p class="proj-desc">Complete restaurant management platform with online menu, table reservations, order
+            tracking, and admin dashboard built with Python & Django.</p>
+          <div class="proj-techs"><span class="tbadge">Python</span><span class="tbadge">Django</span><span
+              class="tbadge">HTML/CSS</span><span class="tbadge">JavaScript</span></div>
+          <div class="proj-links"><a href="#" class="plink"><i class="fab fa-github"></i>&nbsp;GitHub</a><a href="#"
+              class="plink"><i class="fas fa-external-link-alt"></i>&nbsp;Live</a></div>
+        </div>
+        <div class="proj-card rev d2">
+          <div class="proj-num">05</div>
+          <span class="proj-tag">Django · Portfolio</span>
+          <h3 class="proj-title">Personal Portfolio</h3>
+          <p class="proj-desc">This very portfolio — a modern, responsive full-stack portfolio with Django backend,
+            REST APIs, contact form, and dynamic content management.</p>
+          <div class="proj-techs"><span class="tbadge">Django</span><span class="tbadge">DRF</span><span
+              class="tbadge">REST API</span><span class="tbadge">JavaScript</span></div>
+          <div class="proj-links"><a href="#" class="plink"><i class="fab fa-github"></i>&nbsp;GitHub</a><a href="#"
+              class="plink"><i class="fas fa-external-link-alt"></i>&nbsp;Live</a></div>
+        </div>
+        <div class="proj-card rev d3">
+          <div class="proj-num">06</div>
+          <span class="proj-tag">Django REST · API</span>
+          <h3 class="proj-title">Task Management App</h3>
+          <p class="proj-desc">Full-featured task manager with user authentication, CRUD operations, priority levels,
+            deadlines, and team collaboration using Django REST Framework.</p>
+          <div class="proj-techs"><span class="tbadge">Django REST</span><span class="tbadge">Auth</span><span
+              class="tbadge">CRUD</span><span class="tbadge">PostgreSQL</span></div>
+          <div class="proj-links"><a href="#" class="plink"><i class="fab fa-github"></i>&nbsp;GitHub</a><a href="#"
+              class="plink"><i class="fas fa-external-link-alt"></i>&nbsp;Live</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ SERVICES ══ -->
+  <section id="services">
+    <div class="container">
+      <div class="rev">
+        <div class="s-label">Services</div>
+        <h2 class="s-title">What I <em>Offer</em></h2>
+        <p class="s-sub">Complete, production-ready solutions from backend to frontend.</p>
+      </div>
+      <div class="svc-grid">
+        <div class="svc-card rev d1">
+          <div class="svc-icon"><i class="fas fa-globe"></i></div>
+          <div class="svc-title">Web Development</div>
+          <p class="svc-desc">Full-stack web apps with Python, Django, and modern HTML/CSS/JS. Responsive, fast, and
+            scalable for any project size.</p>
+        </div>
+        <div class="svc-card rev d2">
+          <div class="svc-icon"><i class="fas fa-bolt"></i></div>
+          <div class="svc-title">Backend & APIs</div>
+          <p class="svc-desc">Robust Django REST APIs with authentication, CRUD operations, and fully Postman-tested
+            endpoints for any application.</p>
+        </div>
+        <div class="svc-card rev d3">
+          <div class="svc-icon"><i class="fab fa-wordpress"></i></div>
+          <div class="svc-title">WordPress Dev</div>
+          <p class="svc-desc">Custom WordPress sites with Elementor, plugin management, performance optimization, and
+            responsive design excellence.</p>
+        </div>
+        <div class="svc-card rev d1">
+          <div class="svc-icon"><i class="fas fa-chart-line"></i></div>
+          <div class="svc-title">Data Analysis</div>
+          <p class="svc-desc">Data processing and insights using Pandas and NumPy inside Jupyter Notebook. Clean data
+            pipelines, clear results.</p>
+        </div>
+        <div class="svc-card rev d2">
+          <div class="svc-icon"><i class="fas fa-shopping-cart"></i></div>
+          <div class="svc-title">E-Commerce</div>
+          <p class="svc-desc">Complete online stores: product management, cart, checkout, and payment-ready Django
+            architecture built to scale.</p>
+        </div>
+        <div class="svc-card rev d3">
+          <div class="svc-icon"><i class="fas fa-tools"></i></div>
+          <div class="svc-title">Bug Fixing</div>
+          <p class="svc-desc">Debugging, troubleshooting, and optimizing existing web projects with fast turnaround and
+            clean, lasting fixes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ CONTACT ══ -->
+  <section id="contact">
+    <div class="container">
+      <div class="contact-grid">
+        <div class="rev-l">
+          <div class="s-label">Contact</div>
+          <h2 class="s-title">Let's Work<br /><em>Together</em></h2>
+          <p style="font-size:.85rem;color:var(--silver);line-height:1.9;margin-bottom:48px">Have a project in mind?
+            Available for freelance and full-time opportunities. Let's build something exceptional.</p>
+          <div class="ci">
+            <div class="ci-icon"><i class="fas fa-envelope"></i></div>
+            <div>
+              <div class="ci-label">Email</div>
+              <div class="ci-val">danishriazali501@gmail.com</div>
+            </div>
+          </div>
+          <div class="ci">
+            <div class="ci-icon"><i class="fas fa-phone"></i></div>
+            <div>
+              <div class="ci-label">Phone</div>
+              <div class="ci-val">+92 312 4348842</div>
+            </div>
+          </div>
+          <div class="ci">
+            <div class="ci-icon"><i class="fas fa-map-marker-alt"></i></div>
+            <div>
+              <div class="ci-label">Location</div>
+              <div class="ci-val">Lahore, Pakistan</div>
+            </div>
+          </div>
+        </div>
+        <div class="rev-r">
+          <form class="cf" id="cf" onsubmit="sendMsg(event)">
+            {% csrf_token %}
+            <div class="fr">
+              <div class="fg"><label>Your Name</label><input type="text" name="name" placeholder="Muhammad Ali" required /></div>
+              <div class="fg"><label>Email</label><input type="email" name="email" placeholder="you@example.com" required /></div>
+            </div>
+            <div class="fg"><label>Subject</label><input type="text" name="subject" placeholder="Project Inquiry" required /></div>
+            <div class="fg"><label>Message</label><textarea name="message" placeholder="Tell me about your project..."
+                required></textarea></div>
+            <button type="submit" class="btn-gold" style="border:none;font-family:var(--fb)">Send Message →</button>
+            <div class="fsuccess" id="fsuccess">✓ &nbsp;Message received — I'll respond within 24 hours.</div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="f-logo">M · D</div>
+    <p class="f-copy">© 2026 Muhammad Danish · Made in Lahore</p>
+    <div class="socials">
+      <a href="#" class="soc"><i class="fab fa-github"></i></a>
+      <a href="#" class="soc"><i class="fab fa-linkedin-in"></i></a>
+      <a href="#" class="soc"><i class="fab fa-instagram"></i></a>
+      <a href="mailto:danishriazali501@gmail.com" class="soc"><i class="fas fa-envelope"></i></a>
+    </div>
+  </footer>
+
+</body>
+
+</html>
