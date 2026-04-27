@@ -1,12 +1,22 @@
 from django.shortcuts import render
+from django.http import JsonResponse, FileResponse, Http404
+from django.views.decorators.csrf import csrf_exempt
+from django.views.decorators.http import require_POST, require_GET
 from rest_framework import viewsets, status
 from rest_framework.decorators import api_view
 from rest_framework.response import Response
-from .models import Skill, Project, Service, ContactMessage
+import json
+from .models import Skill, Project, Service, ContactMessage, VisitorCount, Resume
 from .serializers import SkillSerializer, ProjectSerializer, ServiceSerializer, ContactMessageSerializer
 
 
+# ── HOME PAGE ──
 def home(request):
+    # Visitor count update karo
+    counter, _ = VisitorCount.objects.get_or_create(id=1)
+    counter.count += 1
+    counter.save()
+
     skills = Skill.objects.filter(is_active=True)
     projects = Project.objects.filter(is_active=True)
     services = Service.objects.filter(is_active=True)
@@ -14,10 +24,12 @@ def home(request):
         'skills': skills,
         'projects': projects,
         'services': services,
+        'visitor_count': counter.count,
     }
     return render(request, 'main/index.html', context)
 
 
+# ── DRF ViewSets ──
 class SkillViewSet(viewsets.ModelViewSet):
     queryset = Skill.objects.filter(is_active=True)
     serializer_class = SkillSerializer
@@ -33,6 +45,7 @@ class ServiceViewSet(viewsets.ModelViewSet):
     serializer_class = ServiceSerializer
 
 
+# ── CONTACT FORM API ──
 @api_view(['POST'])
 def contact_api(request):
     serializer = ContactMessageSerializer(data=request.data)
@@ -42,6 +55,7 @@ def contact_api(request):
     return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
+# ── PORTFOLIO DATA API ──
 @api_view(['GET'])
 def portfolio_data(request):
     skills = Skill.objects.filter(is_active=True)
@@ -53,3 +67,69 @@ def portfolio_data(request):
         'services': ServiceSerializer(services, many=True).data,
     }
     return Response(data)
+
+
+# ── 1. CONTACT FORM (JSON API) ──
+@csrf_exempt
+@require_POST
+def contact_json(request):
+    try:
+        data = json.loads(request.body)
+        name = data.get('name', '').strip()
+        email = data.get('email', '').strip()
+        message = data.get('message', '').strip()
+
+        if not all([name, email, message]):
+            return JsonResponse({'success': False, 'error': 'Sab fields fill karo!'}, status=400)
+
+        ContactMessage.objects.create(name=name, email=email, message=message)
+        return JsonResponse({'success': True, 'message': 'Message send ho gaya!'})
+
+    except Exception as e:
+        return JsonResponse({'success': False, 'error': str(e)}, status=500)
+
+
+# ── 2. PROJECTS API ──
+@require_GET
+def projects_api(request):
+    projects = Project.objects.filter(is_active=True)
+    data = []
+    for p in projects:
+        data.append({
+            'id': p.id,
+            'title': p.title,
+            'description': p.description,
+            'image': request.build_absolute_uri(p.image.url) if p.image else None,
+            'tech_list': p.get_tech_list(),
+            'github_link': p.github_link,
+            'live_link': p.live_link,
+            'tag': p.tag,
+        })
+    return JsonResponse({'projects': data})
+
+
+# ── 4. SKILLS API ──
+@require_GET
+def skills_api(request):
+    skills = Skill.objects.filter(is_active=True)
+    data = [{'name': s.name, 'percentage': s.percentage} for s in skills]
+    return JsonResponse({'skills': data})
+
+
+# ── 5. VISITOR COUNTER API ──
+@require_GET
+def visitor_count_api(request):
+    counter, _ = VisitorCount.objects.get_or_create(id=1)
+    return JsonResponse({'count': counter.count})
+
+
+# ── 6. RESUME DOWNLOAD ──
+@require_GET
+def download_resume(request):
+    try:
+        resume = Resume.objects.latest('uploaded_at')
+        response = FileResponse(resume.file.open('rb'), as_attachment=True)
+        response['Content-Disposition'] = 'attachment; filename="Muhammad_Danish_Resume.pdf"'
+        return response
+    except Resume.DoesNotExist:
+        raise Http404("Resume upload nahi hua abhi.")

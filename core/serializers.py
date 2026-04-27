@@ -11,7 +11,7 @@ class SkillSerializer(serializers.ModelSerializer):
 class ProjectSerializer(serializers.ModelSerializer):
     class Meta:
         model = Project
-        fields = ['id', 'title', 'description', 'tag', 'tech_stack', 'github_link', 'live_link', 'order']
+        fields = ['id', 'title', 'description', 'image', 'tag', 'tech_stack', 'github_link', 'live_link', 'order']
 
 
 class ServiceSerializer(serializers.ModelSerializer):

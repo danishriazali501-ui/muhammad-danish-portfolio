@@ -100,3 +100,17 @@ function animSkill(item) {
   }, 350);
 }
 
+// ── DYNAMIC API FUNCTIONS ──
+
+// 1. Contact Form API (helper for external use)
+function submitContactForm(formData) {
+  return fetch('/api/contact-json/', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'X-CSRFToken': getCookie('csrftoken')
+    },
+    body: JSON.stringify(formData)
+  });
+}
+
